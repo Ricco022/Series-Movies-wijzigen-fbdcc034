@@ -6,6 +6,7 @@
 </head>
 <body>
     <?php
+    // phpcs:ignoreFile
     function select($quary){
             $host = '127.0.0.1';
             $db   = 'netland';
@@ -30,13 +31,13 @@
 
             $rawResult = $pdo->query($quary);
             while ($row = $rawResult->fetch()) {
-                    $rowResult = array();
+                $rowResult = array();
 
                 foreach ($row as $collum => $value) {
                     $rowResult[$collum] = $value;
                 }
 
-                    $formatResult[] = $rowResult;
+                $formatResult[] = $rowResult;
         }
 
             return $formatResult;

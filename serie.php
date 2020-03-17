@@ -7,6 +7,7 @@
 <body>
 <a href="index.php">Terug</a>
 <?php
+// phpcs:ignoreFile
 $host = '127.0.0.1';
 $db   = 'netland';
 $user = 'root';
