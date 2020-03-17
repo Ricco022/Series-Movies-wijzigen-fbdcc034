@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php
-        function select($quary){
+    function select($quary){
             $host = '127.0.0.1';
             $db   = 'netland';
             $user = 'root';
@@ -20,27 +20,27 @@
                 PDO::ATTR_EMULATE_PREPARES   => false,
             ];
 
-            try {
+        try {
                 $pdo = new PDO($dsn, $user, $pass, $options);
-            } catch (\PDOException $e) {
+        } catch (\PDOException $e) {
                 throw new \PDOException($e->getMessage(), (int)$e->getCode());
-            }
+        }
 
             $formatResult = array();
 
             $rawResult = $pdo->query($quary);
-            while ($row = $rawResult->fetch()) {
+        while ($row = $rawResult->fetch()) {
                 $rowResult = array();
 
-                foreach ($row as $collum => $value) {
+            foreach ($row as $collum => $value) {
                     $rowResult[$collum] = $value;
-                }
-
-                $formatResult[] = $rowResult;
             }
 
-            return $formatResult;
+                $formatResult[] = $rowResult;
         }
+
+            return $formatResult;
+    }
     ?>
     <h1>Welkom op het netland beheerders paneel</h1>
 
@@ -55,7 +55,7 @@
         <tbody>
             <?php
                 $rows = select('SELECT * FROM series');
-                foreach ($rows as $row) {
+            foreach ($rows as $row) {
                     echo <<<EOT
                         <tr>
                             <td>${row['title']}</td>
@@ -63,7 +63,7 @@
                             <td><a href="serie.php?id=${row['id']}">Meer info</a></td>
                         </tr>
                     EOT;
-                }
+            }
             ?>
         </tbody>
     </table>
@@ -84,7 +84,7 @@
                 echo <<<EOT
                             <tr>
                                 <td>${row['title']}</td>
-                                <td>${row['duur']}</td>
+                                <td>${row['duration']}</td>
                                 <td><a href="film.php?id=${row['id']}">Meer info</a></td>
                             </tr>
                         EOT;
