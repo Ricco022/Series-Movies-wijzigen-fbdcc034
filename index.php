@@ -20,11 +20,11 @@
                 PDO::ATTR_EMULATE_PREPARES   => false,
             ];
 
-        try {
+            try {
                 $pdo = new PDO($dsn, $user, $pass, $options);
-        } catch (\PDOException $e) {
+            } catch (\PDOException $e) {
                 throw new \PDOException($e->getMessage(), (int)$e->getCode());
-        }
+            }
 
             $formatResult = array();
 
@@ -32,12 +32,12 @@
         while ($row = $rawResult->fetch()) {
                 $rowResult = array();
 
-            foreach ($row as $collum => $value) {
+                foreach ($row as $collum => $value) {
                     $rowResult[$collum] = $value;
-            }
+                }
 
                 $formatResult[] = $rowResult;
-        }
+            }
 
             return $formatResult;
     }
