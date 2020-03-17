@@ -1,3 +1,6 @@
+<?php
+// phpcs:ignoreFile
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,6 @@
 <body>
 <a href="index.php">Terug</a>
 <?php
-// phpcs:ignoreFile
 $host = '127.0.0.1';
 $db   = 'netland';
 $user = 'root';

@@ -1,3 +1,6 @@
+<?php
+// phpcs:ignoreFile
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,6 @@
 </head>
 <body>
     <?php
-    // phpcs:ignoreFile
     function select($quary){
             $host = '127.0.0.1';
             $db   = 'netland';
