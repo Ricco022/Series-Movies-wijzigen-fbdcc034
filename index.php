@@ -29,7 +29,7 @@
             $formatResult = array();
 
             $rawResult = $pdo->query($quary);
-        while ($row = $rawResult->fetch()) {
+            while ($row = $rawResult->fetch()) {
                 $rowResult = array();
 
                 foreach ($row as $collum => $value) {
@@ -37,7 +37,7 @@
                 }
 
                 $formatResult[] = $rowResult;
-            }
+        }
 
             return $formatResult;
     }
