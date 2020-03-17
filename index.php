@@ -30,13 +30,13 @@
 
             $rawResult = $pdo->query($quary);
             while ($row = $rawResult->fetch()) {
-                $rowResult = array();
+                    $rowResult = array();
 
                 foreach ($row as $collum => $value) {
                     $rowResult[$collum] = $value;
                 }
 
-                $formatResult[] = $rowResult;
+                    $formatResult[] = $rowResult;
         }
 
             return $formatResult;
