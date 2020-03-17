@@ -1,7 +1,4 @@
 <?php
-// phpcs:ignoreFile
-?>
-<?php
 $host = '127.0.0.1';
 $db = 'netland';
 $user = 'root';
